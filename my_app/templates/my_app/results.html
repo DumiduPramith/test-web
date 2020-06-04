@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block results %}
+{% load static %}
+{% include "my_app/search.html" %}
+<div class="row" style="margin-top: 50px;">
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'images\coca-cola.jpg' %}">
+          <span class="card-title" style="color: red;">{{key}}</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+            <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{% static 'images\coca-cola.jpg' %}">
+            <span class="card-title" style="color: red;">{{key}}</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+              <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{% static 'images\coca-cola.jpg' %}">
+            <span class="card-title" style="color: red;">{{key}}</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+              <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+</div>
+      
+{% endblock results %}
+
+{% block q_side_bar %}
+  {% include "my_app/question_bar.html" %}
+{% endblock q_side_bar %}

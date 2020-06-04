@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated and request.path == '/' %}
+    {% include "my_app/search.html" %}
+{% endif %}
+
+{% endblock content %}
+
+{% block q_side_bar %}
+    {% include "my_app/question_bar.html" %}
+{% endblock q_side_bar %}
