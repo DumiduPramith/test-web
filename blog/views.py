@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from .models import Question, Answers
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views.generic import ListView
 from .forms import NewQuestion
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.http import Http404  
 
 # Create your views here.
 @login_required
-def home(request):
+def home(request,page_num=1):
     qlist = []
     question_list = Question.objects.all()
     # print(question_list)
@@ -20,16 +20,20 @@ def home(request):
             # print(ans)
         except:
             qlist.append(raw_question)
+    try:
+        p = Paginator(qlist, 3)
+        page = p.page(page_num)
+        is_paginated = True
+    except:
+        raise Http404
+
     context = {
-        'question_list': qlist,
+        'page':page,
         'title': 'Answers Home',
+        'is_paginated' : is_paginated,
     }
     return render(request, 'blog/index.html', context)
 
-class HomeListView(ListView):
-    model = Question
-    template_name = 'blog/index.html'
-    context_object_name = 'question_list'
 
 def save_reply(request, key):
     if request.method == 'POST':

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, PasswordReset
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -48,3 +49,15 @@ def register(request):
         'form': form,
     }
     return render(request,'users/register.html', context)
+
+def password_reset(request):
+    if request.method == 'POST':
+        return redirect('password_reset_done')
+    form = PasswordReset()
+    context = {
+        'form' : form
+    }
+    return render(request, 'users/password_reset.html', context)
+
+def password_reset_done(request):
+    return render(request, 'users/password_reset_done.html')
