@@ -11,8 +11,18 @@
             <a class="mr-2" href="#">{{ question.author }}</a>
             <small class="text-muted">{{ question.date_posted|date:"F d, f A" }}</small>
           </div>
-          <h2><a class="article-title" href="#">{{ question }}</a></h2>
           <p class="article-content">{{ question.content }}</p>
+          
+         
+         {% if question.question_image %}
+         <figure class="figure">
+          <img src="{{ question.question_image.url }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+        </figure>  
+         {% endif %}
+           
+            
+                  
+            
           <form action="reply/{{ question.id }}" method="POST"> {% csrf_token %}
             <input type="text" name='reply'">
             <input type="submit" value="reply">

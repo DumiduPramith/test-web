@@ -51,10 +51,11 @@ def create_question(request):
         form = NewQuestion(request.POST)
         if form.is_valid():
             raw_data = form.cleaned_data
-            title = raw_data['title']
             content = raw_data['content']
+            image = request.FILES['question_image']
+            print(image)
             logged_user = User.objects.get(id=request.user.id)
-            query = Question(title= title, content= content, author= logged_user)
+            query = Question(content= content,author= logged_user, question_image = image)
             query.save()
             messages.success(request, f'Your Question has been Submitted!')
             return redirect('index')
