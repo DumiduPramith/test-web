@@ -19,13 +19,14 @@
           <img src="{{ question.question_image.url }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
         </figure>  
          {% endif %}
-           
-            
-                  
             
           <form action="reply/{{ question.id }}" method="POST"> {% csrf_token %}
-            <input type="text" name='reply'">
+            <input type="text" name='reply' required>
             <input type="submit" value="reply">
+          </form>
+
+          <form action="reply/{{ question.id }}" method="POST"> {% csrf_token %}
+            <input type="submit" name="reply" value="Delete" >
           </form>
         </div>
       </article>
