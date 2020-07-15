@@ -39,7 +39,7 @@ def save_reply(request, key):
     if request.method == 'POST':
         reply = request.POST['reply']
         print(reply)
-        if reply == 'Delete':
+        if replycd == 'Delete':
             reply = 'Null'
         logged_user = request.user.id
         q_query = Question.objects.get(id=key)
