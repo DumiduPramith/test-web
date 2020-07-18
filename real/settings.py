@@ -27,7 +27,7 @@ SECRET_KEY = '=0sm+-f63+ox@7z(9jw%orv_h89cd@8f!@+$jo9ru=1!-zt=1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['search-name.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['search-name.herokuapp.com','127.0.0.1','https://djangosearch.azurewebsites.net/']
 
 
 # Application definition
