@@ -27,7 +27,7 @@ SECRET_KEY = '=0sm+-f63+ox@7z(9jw%orv_h89cd@8f!@+$jo9ru=1!-zt=1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['search-name.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['23.102.229.210','127.0.0.1']
 
 
 # Application definition
@@ -84,10 +84,18 @@ WSGI_APPLICATION = 'real.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+    'default' : {
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'dumidu@djangomysql',
+        'NAME': 'test',
+        'PASSWORD': 'Withikuliya1',
+        'HOST': 'djangomysql.mysql.database.azure.com',
+        'PORT': '3306',
+    },
 }
 
 
