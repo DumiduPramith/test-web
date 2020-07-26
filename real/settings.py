@@ -102,7 +102,7 @@ DATABASES = {
         'OPTIONS' : {
             'read_default_file' : '/tutorial/secure/mysql.cnf',
         },
-    }
+    },
 }
 
 

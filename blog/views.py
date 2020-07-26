@@ -38,8 +38,8 @@ def home(request,page_num=1):
 def save_reply(request, key):
     if request.method == 'POST':
         reply = request.POST['reply']
-        print(reply)
-        if replycd == 'Delete':
+        # print(reply)
+        if reply == 'Delete':
             reply = 'Null'
         logged_user = request.user.id
         q_query = Question.objects.get(id=key)
