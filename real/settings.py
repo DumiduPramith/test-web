@@ -94,7 +94,7 @@ DATABASES = {
     #     'USER': 'dumidu@djangomysql',
     #     'NAME': 'test',
     #     'PASSWORD': 'Withikuliya1',
-    #     'HOST': 'djangomysql.mysqli.database.azure.com',
+    #     'HOST': 'djangomysql.mysql.database.azure.com',
     #     'PORT': '3306',
     # },
     'default' : {
