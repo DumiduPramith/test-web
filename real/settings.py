@@ -100,7 +100,7 @@ DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.mysql',
         'OPTIONS' : {
-            'read_default_file' : '/auth/mysql.cnf',
+            'read_default_file' : '/home/dumidu/django/auth/mysql.cnf',
         },
     },
 }
