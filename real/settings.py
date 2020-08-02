@@ -100,7 +100,7 @@ DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.mysql',
         'OPTIONS' : {
-            'read_default_file' : '/tutorial/secure/mysql.cnf',
+            'read_default_file' : '/django/auth/mysql.cnf',
         },
     },
 }
