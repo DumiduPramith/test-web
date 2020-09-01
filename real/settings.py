@@ -145,14 +145,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'),)
-print(STATICFILES_DIR)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
+#B2
+
+DEFAULT_FILE_STORAGE = 'django_b2.storage.B2Storage'
+B2_APP_KEY_ID= 'f39a22bb02f7'
+B2_APP_KEY= '002d95770f8687e8a9d9e1f1539b321e348a0fbe90'
+B2_BUCKET_NAME= 'fingershopping'
