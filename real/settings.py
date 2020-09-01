@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'real.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     },
     # 'default' : {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'USER': 'dumidu@djangomysql',
@@ -100,7 +100,7 @@ DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.mysql',
         'OPTIONS' : {
-            'read_default_file' : '/home/dumidu/django/auth/mysql.cnf',
+            'read_default_file' : os.path.join(BASE_DIR,'mysql.cnf'),
         },
     },
 }

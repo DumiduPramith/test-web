@@ -9,7 +9,7 @@ __pycache__/
 
 #my own
 .pyc
-
+/env
 
 # Distribution / packaging
 .Python
